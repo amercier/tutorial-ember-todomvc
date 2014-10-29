@@ -1,15 +1,11 @@
 {
   "scripts": {
-    "dist": "gulp dist",
-    "gen-i18n": "gulp gen-i18n",
     "test": "gulp test"
   },
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8",
-    "pemberly-web-lib": "^0.0.221"
+    "gulp": "^3.8.8"
   },
   "dependencies": {
-    "pemberly-web-packages": "^0.0.42"
   }
 }
