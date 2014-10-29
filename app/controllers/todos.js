@@ -1,4 +1,6 @@
-Todos.TodosController = Ember.ArrayController.extend({
+import Ember from 'ember';
+
+var TodosController = Ember.ArrayController.extend({
   actions: {
     
     createTodo: function() {
@@ -55,3 +57,5 @@ Todos.TodosController = Ember.ArrayController.extend({
   }.property('@each.isCompleted')
 
 });
+
+export default TodosController;

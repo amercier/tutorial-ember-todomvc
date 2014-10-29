@@ -1,0 +1,6 @@
+{
+  "appDir": "app",
+  "debug": false,
+  "buildDir": "build/dist",
+  "vendorDir": "bower_components"
+}
