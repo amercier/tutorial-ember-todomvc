@@ -36,6 +36,13 @@ var paths = {
     src: path.join(config.appDir, '**', '*.hbs'),
     dest: config.buildDir
   },
+  tests: {
+    src: [
+      path.join(config.testDir, '*.js'),
+      path.join(config.testDir, '**', '*.js')
+    ],
+    dest: 'build/tests'
+  },
   vendor: {
     src: path.join(config.vendorDir, "**", "*.*"),
     dest: path.join(config.buildDir, 'vendor')
@@ -184,6 +191,26 @@ gulp.task('dev', function() {
   return runSequence(
     'clean',
     ['watch:all', 'copy:vendor', 'connect']
+  );
+});
+
+
+// Testing
+// -------
+
+gulp.task('compile:tests', function () {
+  return gulp.src(paths.tests.src)
+    .pipe($.plumber())
+    .pipe($.if(config.debug, $.debug()))
+    .pipe($.es6ModuleTranspiler({ type: 'amd' }))
+    .pipe(gulp.dest(paths.tests.dest));
+});
+
+gulp.task('test', function() {
+  return runSequence(
+    'clean',
+    ['watch:all', 'copy:vendor'],
+    'testem'
   );
 });
 
