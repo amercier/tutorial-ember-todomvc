@@ -1,8 +1,4 @@
-module('Integration Tests', {
-  teardown: function() {
-    Todos.reset();
-  }
-});
+module('Integration Tests');
 
 test('Application initializes correctly', function() {
   expect(1);
