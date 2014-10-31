@@ -1,0 +1,28 @@
+{
+  "framework": "qunit",
+  "test_page": "tests/index.html",
+  "src_files": [
+    "bower_components/jquery/dist/jquery.js",
+    "bower_components/handlebars/handlebars.js",
+    "bower_components/ember/ember.js",
+    "bower_components/ember-data/ember-data.js",
+    "bower_components/ember-localstorage-adapter/localstorage_adapter.js",
+    "app/js/application.js",
+    "app/js/router.js",
+    "app/js/models/todo.js",
+    "app/js/controllers/todos_controller.js",
+    "app/js/controllers/todo_controller.js",
+    "app/js/views/edit_todo_view.js",
+    "tests/bootstrap.js",
+    "tests/integration/todos.js"
+  ],
+  "launch_in_dev": [
+    "PhantomJS",
+    "Chrome",
+    "Firefox",
+    "Opera"
+  ],
+  "launch_in_ci": [
+    "PhantomJS"
+  ]  
+}
