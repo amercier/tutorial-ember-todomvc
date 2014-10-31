@@ -17,10 +17,7 @@
     "tests/integration/todos.js"
   ],
   "launch_in_dev": [
-    "PhantomJS",
-    "Chrome",
-    "Firefox",
-    "Opera"
+    "PhantomJS"
   ],
   "launch_in_ci": [
     "PhantomJS"
