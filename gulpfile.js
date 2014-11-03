@@ -106,16 +106,17 @@ gulp.task('compile:templates', function() {
       outputType: 'amd',
       inputType: 'ast',
       templateRegistration: function(name, contents) {
+        console.log(name, name.replace(/^templates\//, ''));
         return _.template(
           'define("<%= name %>", ["ember"], function(Ember) { ' +
             'Ember = Ember["default"]; ' +
             'return { "default": <%= contents %> }; ' +
           '});'
-        )({ name: name, contents: contents });
+        )({ name: name.replace(/^templates\//, ''), contents: contents });
       }
     }))
     //.pipe(insertEmberDependencyReferences())
-    .pipe(gulp.dest(paths.templates.src));
+    .pipe(gulp.dest(paths.templates.dest));
 });
 
 // Stylesheets compilation
@@ -206,11 +207,26 @@ gulp.task('compile:tests', function () {
     .pipe(gulp.dest(paths.tests.dest));
 });
 
+gulp.task('watch:tests', ['compile:tests'], function() {
+  return $.watch(
+    path.join(config.appDir, '**', '*.js'),
+    function (files, cb) {
+      gulp.start('compile:tests', cb);
+    }
+  );
+});
+
+gulp.task('testem', ['compile:tests'], function() {
+  return gulp.src([''])
+    .pipe($.testem({
+      configFile: 'testem.json'
+    }));
+});
+
 gulp.task('test', function() {
   return runSequence(
     'clean',
-    ['watch:all', 'copy:vendor'],
-    'testem'
+    ['watch:all', 'watch:tests', 'copy:vendor', 'testem']
   );
 });
 

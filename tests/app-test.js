@@ -16,6 +16,7 @@
 // 
 
 require.config({
+  baseUrl: '../build/dist',
   paths: {
     'jquery': 'vendor/jquery/dist/jquery',
     'handlebars': 'vendor/handlebars/handlebars',
@@ -24,7 +25,8 @@ require.config({
     'ember/resolver': 'vendor/ember-resolver/dist/ember-resolver',
     'ember/load-initializers': 'vendor/ember-load-initializers/ember-load-initializers',
     'ember/container-debug-adapter': 'vendor/ember-resolver/dist/ember-resolver',
-    'ember/local-storage-adapter': 'vendor/ember-localstorage-adapter/localstorage_adapter'
+    'ember/local-storage-adapter': 'vendor/ember-localstorage-adapter/localstorage_adapter',
+    'tests': '../tests'
   },
   shim: {
     'jquery': {
@@ -63,15 +65,11 @@ require.config({
   }
 });
 
-requirejs.config({
-  paths: {
-    tests: '../tests'
-  }
-});
-
-require(['./app-main'], function() {
-  console.info('Application loaded');
-  require(['views/edit_todo'], function() {
-    console.info('Tests loaded');
+// require(['onResourceLoad'], function () {
+  require(['app'], function() {
+    console.info('Application loaded');
+    require(['views/edit_todo'], function() {
+      console.info('Tests loaded');
+    });
   });
-});
+// });
