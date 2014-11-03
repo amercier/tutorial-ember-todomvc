@@ -3,6 +3,12 @@
   "dependencies": {
     "ember": "~1.8.0",
     "ember-data": "~1.0.0",
-    "ember-localstorage-adapter": "~0.4.0"
+    "ember-localstorage-adapter": "~0.4.0",
+    "requirejs": "~2.1.15",
+    "ember-resolver": "~0.1.10"
+  },
+  "devDependencies": {
+    "qunit": "~1.15.0",
+    "requirejs": "~2.1.15"
   }
 }

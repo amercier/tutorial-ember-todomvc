@@ -1,4 +1,6 @@
-Todos.TodoController = Ember.ObjectController.extend({
+import Ember from 'ember';
+
+var TodoController = Ember.ObjectController.extend({
 
   actions: {
     editTodo: function() {
@@ -42,3 +44,5 @@ Todos.TodoController = Ember.ObjectController.extend({
   isEditing: false
 
 });
+
+export default TodoController;

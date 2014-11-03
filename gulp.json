@@ -1,0 +1,7 @@
+{
+  "appDir": "app",
+  "debug": false,
+  "buildDir": "build/dist",
+  "testDir": "tests",
+  "vendorDir": "bower_components"
+}
