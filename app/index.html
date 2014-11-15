@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Ember.js • TodoMVC</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/app.css">
   </head>
   <body>
 
@@ -73,17 +73,21 @@
 
     </script>
 
-    <script src="js/libs/jquery/dist/jquery.js"></script>
-    <script src="js/libs/handlebars/handlebars.js"></script>
-    <script src="js/libs/ember/ember.js"></script>
-    <script src="js/libs/ember-data/ember-data.js"></script>
-    <script src="js/libs/ember-localstorage-adapter/localstorage_adapter.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/ember/ember.js"></script>
+    <script src="../bower_components/ember-data/ember-data.js"></script>
+    <script src="../bower_components/ember-localstorage-adapter/localstorage_adapter.js"></script>
 
-    <script src="js/application.js"></script>
-    <script src="js/router.js"></script>
-    <script src="js/models/todo.js"></script>
-    <script src="js/controllers/todos_controller.js"></script>
-    <script src="js/controllers/todo_controller.js"></script>
-    <script src="js/views/edit_todo_view.js"></script>
+    <script src="app.js"></script>
+    <script src="router.js"></script>
+    <script src="routes/todos.js"></script>
+    <script src="routes/todos/index.js"></script>
+    <script src="routes/todos/active.js"></script>
+    <script src="routes/todos/completed.js"></script>
+    <script src="models/todo.js"></script>
+    <script src="controllers/todos.js"></script>
+    <script src="controllers/todo.js"></script>
+    <script src="views/edit_todo.js"></script>
   </body>
 </html>
