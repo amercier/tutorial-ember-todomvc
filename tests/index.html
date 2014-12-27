@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TutorialEmberTodomvcEmbercli Tests</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../app/styles/app.css">
+    <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css">
+    
+    <style>
+      body {
+        width: auto;
+      }
+      #ember-testing-container {
+        position: fixed;
+        background: white;
+        bottom: 0;
+        right: 0;
+        width: 640px;
+        height: 384px;
+        overflow: auto;
+        z-index: 9999;
+        border: 1px solid rgba(0,0,0,0.3);
+        opacity: 0.8;
+        margin: 5px;
+      }
+
+      #ember-testing-container::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.3);
+        content: 'Application';
+        display: block;
+        padding: .2em .5em;
+      }
+
+      #ember-testing {
+        zoom: 50%;
+      }
+
+      #__testem_ui__ {
+        border: none;
+        margin: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/ember/ember.js"></script>
+    <script src="../bower_components/ember-data/ember-data.js"></script>
+    <script src="../bower_components/ember-localstorage-adapter/localstorage_adapter.js"></script>
+
+    <script src="../app/app.js"></script>
+    <script>
+      Todos.setupForTesting();
+      Todos.injectTestHelpers();
+    </script>
+    <script src="../app/adapters/application.js"></script>
+    <script src="../app/controllers/todo.js"></script>
+    <script src="../app/controllers/todos.js"></script>
+    <script src="../app/models/todo.js"></script>
+    <script src="../app/router.js"></script>
+    <script src="../app/routes/todos.js"></script>
+    <script src="../app/routes/todos/active.js"></script>
+    <script src="../app/routes/todos/completed.js"></script>
+    <script src="../app/routes/todos/index.js"></script>
+    <script src="../app/views/edit_todo.js"></script>
+
+    <script src="../.tmp/application.js"></script>
+    <script src="../.tmp/todos.js"></script>
+    <script src="../.tmp/todos/index.js"></script>
+
+    <script src="fixtures/todo.js"></script>
+    <script src="helpers/delay.js"></script>
+    <script src="helpers/module-for-integration.js"></script>
+    <script src="helpers/start-app.js"></script>
+
+    <script src="../bower_components/qunit/qunit/qunit.js"></script>
+    <script src="../bower_components/ember-qunit/dist/globals/main.js"></script>
+    <script>
+      emq.globalize();
+      emq.setResolver(Ember.DefaultResolver.create({ namespace: Todos }));
+    </script>
+
+    <script src="1-unit/controllers/todo-test.js"></script>
+    <script src="1-unit/models/todo-test.js"></script>
+<!--     <script src="1-unit/routes/todos-test.js"></script>
+    <script src="1-unit/routes/todos/index-test.js"></script>
+    <script src="1-unit/routes/todos/active-test.js"></script>
+    <script src="1-unit/routes/todos/completed-test.js"></script>
+ --><!--     <script src="2-integration/add-new-todo-test.js"></script>
+    <script src="2-integration/remove-todo-test.js"></script>
+ -->  </body>
+</html>
